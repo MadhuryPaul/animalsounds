@@ -25,7 +25,7 @@ animal_sounds <- function(animal, sound) {
 
 	if (!rlang::is_character(sound, n = 1)) {
 		cli::cli_abort(
-			c("{.var sound} must be a single string!",
+			c("{.var sound} must be a {.cls character} vector of length 1!",
 			  "i" = "It was {.type {sound}} of length {length(sound)} instead."),
 			class = "error_not_single_string"
 		)
