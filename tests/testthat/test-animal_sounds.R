@@ -2,6 +2,9 @@ test_that("animal_sounds produces expected strings", {
 	dog_woof <- animal_sounds("dog", "woof")
 	expect_equal(dog_woof, "The dog goes woof!")
 	expect_equal(animal_sounds("cat", "miaow"), "The cat goes miaow!")
+	giraffe <- animal_sounds("giraffe")
+	expect_equal(giraffe,
+				 "The giraffe makes no sound.")
 })
 
 test_that("handles invalid inputs", {
