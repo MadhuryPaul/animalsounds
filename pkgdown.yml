@@ -1,8 +1,9 @@
 pandoc: 3.1.11
 pkgdown: 2.1.3
 pkgdown_sha: ~
-articles: {}
-last_built: 2025-06-24T12:26Z
+articles:
+  animalsounds: animalsounds.html
+last_built: 2025-06-24T13:01Z
 urls:
-  reference: https://madhurypaul.github.io/animalsounds/reference
-  article: https://madhurypaul.github.io/animalsounds/articles
+  reference: https://ellakaye.github.io/animalsounds/reference
+  article: https://ellakaye.github.io/animalsounds/articles
