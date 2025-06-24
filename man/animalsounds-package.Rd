@@ -12,6 +12,7 @@ Connects animals with their sounds.
 Useful links:
 \itemize{
   \item \url{https://github.com/EllaKaye/animalsounds}
+  \item \url{https://ellakaye.github.io/animalsounds/}
   \item Report bugs at \url{https://github.com/EllaKaye/animalsounds/issues}
 }
 
