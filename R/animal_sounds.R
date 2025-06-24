@@ -14,30 +14,25 @@
 #' animal_sounds("dog", "woof")
 animal_sounds <- function(animal, sound = NULL) {
 
-	if (!rlang::is_character(animal, n = 1)) {
-		cli::cli_abort(
-			c("{.var animal} must be a single string!",
-			  "i" = "It was {.type {animal}} of length {length(animal)} instead.",
-			  "i" = "You typed {animal}."),
-			class = "error_not_single_string"
-		)
-	}
+	check_arg(animal)
 
 	if (is.null(sound)){
 		return(paste0("The ", animal, " makes no sound."))
 	}
 
-	if (!rlang::is_character(sound, n = 1)) {
-		cli::cli_abort(
-			c("{.var sound} must be a {.cls character} vector of length 1!",
-			  "i" = "It was {.type {sound}} of length {length(sound)} instead."),
-			class = "error_not_single_string"
-		)
-	}
+	check_arg(sound)
 
 	paste0("The ", animal, " goes ", sound, "!")
 }
 
-check_arg <- function(arg) {
-	NULL
+check_arg <- function(arg, n = 1) {
+	if (!rlang::is_character(arg, n = n)) {
+		cli::cli_abort(
+			c("{.var {rlang::caller_arg(arg)}} must be a single string!",
+			  "i" = "It was {.type {arg}} of length {length(arg)} instead.",
+			  "i" = "You typed {arg}."),
+			call = rlang::caller_env(),
+			class = "error_not_single_string"
+		)
+	}
 }
